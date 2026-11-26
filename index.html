@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0c3b39">
+<meta name="theme-color" content="#333333">
 <script>document.documentElement.className+=' js'</script>
 
 <!-- ===== SEO 基本標籤 ===== -->
@@ -72,23 +72,11 @@
         "Wednesday",
         "Thursday",
         "Friday",
-        "Saturday"
+        "Saturday",
+        "Sunday"
       ],
-      "opens": "08:30",
-      "closes": "12:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "13:00",
-      "closes": "18:00"
+      "opens": "07:00",
+      "closes": "22:00"
     }
   ],
   "priceRange": "$$",
@@ -158,7 +146,7 @@
       "name": "營業與預約時間是？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "週一至週六 08:30–12:00、13:00–18:00。歡迎於營業時間內加入 LINE 官方帳號（@837suoya）或電話（0909-999-751）預約，我們會盡快為您安排到府時段。"
+        "text": "每天 07:00–22:00。歡迎於營業時間內加入 LINE 官方帳號（@837suoya）或電話（0909-999-751）預約，我們會盡快為您安排到府時段。"
       }
     }
   ]
@@ -171,16 +159,17 @@
 
 <style>
 :root{
-  --ink:#12302f;        /* 深墨綠：文字、深色區塊 */
-  --deep:#0c3b39;       /* 首屏與深色底 */
-  --teal:#0e7c74;       /* 品牌主色：清潔後、重點 */
-  --mist:#e6f2ef;       /* 淺綠灰：交錯區塊底 */
-  --bg:#f6f9f8;
+  --ink:#333333;        /* 炭黑：品牌主色，文字、深色區塊 */
+  --deep:#333333;       /* 首屏與深色底 */
+  --teal:#D4BA18;       /* 芥末黃：品牌強調色（沿用變數名，底色與裝飾用） */
+  --olive:#5E5C3C;      /* 橄欖：淺底上的黃色系文字與圖示 */
+  --mist:#F3F3EA;       /* 米白：交錯區塊底 */
+  --bg:#FAFAF5;
   --white:#fff;
-  --line:#d3dfdc;
-  --soft:#41605d;       /* 次級文字 */
-  --sun:#f2b632;        /* 抹布黃：僅用於指示與焦點 */
-  --before:#3b4242;     /* 清潔前標籤 */
+  --line:#dcdacb;
+  --soft:#5a574c;       /* 次級文字 */
+  --sun:#D4BA18;        /* 指示與焦點 */
+  --before:#55524a;     /* 清潔前標籤 */
   --line-green:#06c755;
   --r:6px;
 }
@@ -197,7 +186,7 @@ h2{font-size:clamp(26px,4.2vw,38px)}
 section{padding:72px 0}
 
 /* ===== 頂部聯絡列 ===== */
-.topbar{background:var(--ink);color:#cfe3df;font-size:14px}
+.topbar{background:var(--ink);color:#d9d7c9;font-size:14px}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;flex-wrap:wrap;gap:4px 16px}
 .topbar a{color:#fff;font-weight:700;text-decoration:none}
 
@@ -205,12 +194,12 @@ section{padding:72px 0}
 header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 header.site .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
 .logo{font-size:22px;font-weight:900;letter-spacing:.04em;text-decoration:none}
-.logo span{color:var(--teal);margin-left:4px}
+.logo span{color:var(--olive);margin-left:4px}
 nav.main{display:flex;align-items:center;gap:26px}
 nav.main a{text-decoration:none;font-size:15px;font-weight:500;color:var(--soft)}
-nav.main a:hover{color:var(--teal)}
+nav.main a:hover{color:var(--olive)}
 nav.main a.nav-cta{background:var(--ink);color:#fff;padding:9px 18px;border-radius:var(--r);font-weight:700}
-nav.main a.nav-cta:hover{background:var(--teal);color:#fff}
+nav.main a.nav-cta:hover{background:var(--teal);color:var(--ink)}
 @media(max-width:820px){nav.main a:not(.nav-cta){display:none}}
 
 /* ===== 按鈕 ===== */
@@ -230,11 +219,11 @@ nav.main a.nav-cta:hover{background:var(--teal);color:#fff}
 .cmp .cmp-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
 .cmp-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:var(--white);box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
 .cmp-handle::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.35);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M17 15l-7 7 7 7M27 15l7 7-7 7' fill='none' stroke='%2312302f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M17 15l-7 7 7 7M27 15l7 7-7 7' fill='none' stroke='%23333333' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
 .cmp input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;touch-action:pan-y;margin:0}
 .cmp:focus-within .cmp-handle::after{outline:3px solid var(--sun);outline-offset:2px}
 .tag{display:inline-block;font-size:14px;font-weight:700;line-height:1;padding:7px 11px;border-radius:3px;color:#fff;background:var(--before)}
-.tag.after{background:var(--teal)}
+.tag.after{background:var(--teal);color:var(--ink)}
 .cmp .tag{position:absolute;top:12px;pointer-events:none}
 .cmp .tag.t-before{left:12px}
 .cmp .tag.t-after{right:12px}
@@ -246,11 +235,11 @@ nav.main a.nav-cta:hover{background:var(--teal);color:#fff}
 .hero h1{letter-spacing:0;text-wrap:balance}
 .hero h1 .k{display:block;font-size:clamp(18px,2.4vw,24px);font-weight:700;line-height:1.4;color:var(--sun);margin-bottom:14px}
 .hero h1 .h{display:block;font-size:clamp(38px,6.4vw,68px);line-height:1.12}
-.hero .lead{font-size:19px;margin-top:20px;color:#cfe6e2;max-width:30em}
+.hero .lead{font-size:19px;margin-top:20px;color:#e6e4d6;max-width:30em}
 .hero-facts{list-style:none;margin-top:24px;display:grid;gap:6px;font-weight:500}
 .hero-facts li::before{content:"✓";color:var(--sun);font-weight:900;margin-right:10px}
 .hero .btns{margin-top:30px}
-.hero .cmp-note{color:#9fc4be}
+.hero .cmp-note{color:#bdbaa8}
 .hero .cmp{max-width:420px;margin-left:auto}
 .hero .cmp-wrap{width:100%;max-width:420px;margin-left:auto}
 @media(max-width:860px){
@@ -292,7 +281,7 @@ nav.main a.nav-cta:hover{background:var(--teal);color:#fff}
 .phase h4 .tag{font-size:15px;padding:8px 13px}
 .phase h4 span.n{color:var(--soft);font-weight:500;font-size:16px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
-.grid a{display:block;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r);background:#dfe7e5}
+.grid a{display:block;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r);background:#e6e4d6}
 .js .grid:not(.open) a.extra{display:none}
 .more{margin-top:16px;font:inherit;font-weight:700;font-size:16px;padding:12px 22px;border-radius:var(--r);border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
 .more:hover{background:var(--ink);color:#fff}
@@ -308,12 +297,12 @@ nav.main a.nav-cta:hover{background:var(--teal);color:#fff}
 
 /* ===== 服務範圍（北到南） ===== */
 .area{background:var(--deep);color:#fff}
-.area .sec-sub{color:#b5d3ce}
+.area .sec-sub{color:#cfcdbd}
 .route{list-style:none;display:grid;grid-template-columns:repeat(7,1fr);margin-top:44px;position:relative}
 .route::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:rgba(255,255,255,.28)}
 .route li{position:relative;padding-top:30px;font-size:18px;font-weight:700}
 .route li::before{content:"";position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--deep);border:3px solid var(--sun)}
-.route li small{display:block;font-size:13px;font-weight:500;color:#9fc4be;margin-top:2px}
+.route li small{display:block;font-size:13px;font-weight:500;color:#bdbaa8;margin-top:2px}
 @media(max-width:820px){
   .route{grid-template-columns:1fr;gap:0}
   .route::before{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto}
@@ -324,7 +313,7 @@ nav.main a.nav-cta:hover{background:var(--teal);color:#fff}
 /* ===== 為什麼選我們 ===== */
 .why{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin-top:36px}
 .why > div{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
-.why svg{flex:none;width:30px;height:30px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+.why svg{flex:none;width:30px;height:30px;stroke:var(--olive);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
 .why h3{font-size:19px;margin-bottom:4px}
 .why p{font-size:16px;color:var(--soft)}
 @media(max-width:820px){.why{grid-template-columns:1fr}}
@@ -341,23 +330,31 @@ nav.main a.nav-cta:hover{background:var(--teal);color:#fff}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-size:18px;font-weight:700;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:6px;top:50%;margin-top:-16px;font-size:28px;font-weight:500;color:var(--teal);line-height:1.1}
+.faq summary::after{content:"+";position:absolute;right:6px;top:50%;margin-top:-16px;font-size:28px;font-weight:500;color:var(--olive);line-height:1.1}
 .faq details[open] summary::after{content:"−"}
 .faq details p{padding:0 40px 22px 0;color:var(--soft)}
 
 /* ===== CTA ===== */
-.cta{background:var(--teal);color:#fff;text-align:center}
+.cta{background:var(--teal);color:var(--ink);text-align:center}
 .cta h2{font-size:clamp(28px,4.6vw,42px)}
-.cta p{font-size:19px;margin-top:14px;color:#dff3f0}
+.cta p{font-size:19px;margin-top:14px;color:var(--ink)}
 .cta .btns{justify-content:center;margin-top:28px}
 
+/* ===== LINE QR（僅桌機顯示，手機直接點按鈕） ===== */
+.qr{display:none}
+@media(min-width:821px){
+  .qr{display:flex;align-items:center;justify-content:center;gap:24px;margin:32px auto 0;background:var(--white);color:var(--ink);padding:20px 28px;border-radius:var(--r);width:fit-content;text-align:left}
+  .qr strong{display:block;font-size:19px}
+  .qr p{font-size:16px;margin-top:6px;color:var(--soft)}
+}
+
 /* ===== Footer ===== */
-footer{background:var(--ink);color:#a9c4c0;padding:44px 0 32px;font-size:15px}
+footer{background:var(--ink);color:#c9c7b8;padding:44px 0 32px;font-size:15px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px}
 footer strong{color:#fff;font-size:18px;display:block;margin-bottom:10px}
-footer a{color:#dbeae7;text-decoration:none}
+footer a{color:#efede0;text-decoration:none}
 footer a:hover{text-decoration:underline}
-.copyright{flex-basis:100%;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;text-align:center;font-size:13px;color:#7d9c98}
+.copyright{flex-basis:100%;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;text-align:center;font-size:13px;color:#a19f90}
 
 /* ===== 手機底部預約列 ===== */
 .dock{display:none}
@@ -371,7 +368,7 @@ footer a:hover{text-decoration:underline}
 
 /* ===== 燈箱 ===== */
 dialog.lb{border:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;padding:0;color:#fff}
-dialog.lb::backdrop{background:rgba(8,22,21,.94)}
+dialog.lb::backdrop{background:rgba(22,22,20,.94)}
 .lb-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
 .lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:4px}
 .lb-cap{margin-top:12px;font-size:15px;display:flex;align-items:center;gap:10px}
@@ -574,7 +571,7 @@ dialog.lb::backdrop{background:rgba(8,22,21,.94)}
     <details><summary>有投保嗎？可以開發票嗎？</summary>
       <p>有投保，施工過程有保障。也可開立發票，方便公司行號、房東與包租代管業者報帳核銷。</p></details>
     <details><summary>營業與預約時間是？</summary>
-      <p>週一至週六 08:30–12:00、13:00–18:00。歡迎於營業時間內加入 LINE 官方帳號（@837suoya）或電話（0909-999-751）預約，我們會盡快為您安排到府時段。</p></details>
+      <p>每天 07:00–22:00。歡迎於營業時間內加入 LINE 官方帳號（@837suoya）或電話（0909-999-751）預約，我們會盡快為您安排到府時段。</p></details>
   </div>
 </div></section>
 
@@ -586,6 +583,7 @@ dialog.lb::backdrop{background:rgba(8,22,21,.94)}
     <a href="https://lin.ee/6TWCVLf" class="btn btn-line">加 LINE 官方帳號 @837suoya</a>
     <a href="tel:0909999751" class="btn btn-tel">撥打 0909-999-751</a>
   </div>
+  <div class="qr"><img src="images/line-qr.png" width="180" height="180" alt="鋭鴻清潔工程行 LINE 官方帳號 QR Code" loading="lazy" decoding="async"><div><strong>用手機掃描，直接加 LINE</strong><p>LINE 官方帳號 @837suoya</p></div></div>
 </div></section>
 
 </main>
@@ -595,7 +593,7 @@ dialog.lb::backdrop{background:rgba(8,22,21,.94)}
     <strong>鋭鴻清潔工程行</strong>
     臺東縣臺東市豐榮里豐榮路67之3號1樓<br>
     電話：<a href="tel:0909999751">0909-999-751</a>　LINE 官方帳號：@837suoya<br>
-    營業時間：週一至週六 08:30–12:00、13:00–18:00<br>
+    營業時間：每天 07:00–22:00<br>
     統一編號：00462006（臺東縣政府核准設立）<br>
     負責人：劉柔均
   </div>
